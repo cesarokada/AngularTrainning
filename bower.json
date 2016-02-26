@@ -1,0 +1,18 @@
+{
+  "name": "citEventosApp",
+  "description": "App de gerenciamento de eventos CIT",
+  "main": "",
+  "moduleType": [],
+  "authors": [
+    "cesary@ciandt.com"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "devDependencies": {
+    "angular": "^1.5.0",
+    "bootstrap": "^3.3.6",
+    "angular-loading-bar": "^0.8.0",
+    "angular-ui-router": "^0.2.18",
+    "angular-cookies": "^1.5.0"
+  }
+}

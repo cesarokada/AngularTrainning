@@ -1,0 +1,33 @@
+<h3>Lista de eventos da CI&T</h3>
+
+<div class="table-list">
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Título</th>
+                <th>Local</th>
+                <th>Data/Hora Início</th>
+                <th>Data/Hora Término</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="event in listEvents()">
+                <td>{{event.id}}</td>
+                <td>{{event.title}}</td>
+                <td>{{event.locale}}</td>
+                <td>{{event.start_datetime | date: "dd/MM/yyyy 'às' H'h'm"}}</td>
+                <td>{{event.end_datetime | date: "dd/MM/yyyy 'às' H'h'm"}}</td>
+                <td>
+                    <button class="btn btn-xs btn-primary" title="Editar">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </button>
+                    <button class="btn btn-xs btn-danger" title="Deletar">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

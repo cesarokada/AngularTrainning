@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="citEventos">
+<head>
+    <meta charset="UTF-8">
+    <title>CIT Eventos</title>
+
+    <!--CSS-->
+    <link type="text/css" rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link type="text/css" rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.min.css">
+    <link type="text/css" rel="stylesheet" href="css/app.css">
+
+    <!--lib angular-->
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/angular-loading-bar/build/loading-bar.min.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/app.router.js"></script>
+
+    <!--Controllers-->
+    <script src="js/controllers/login.controller.js"></script>
+    <script src="js/controllers/eventos/listarEventos.controller.js"></script>
+
+    <!--Services-->
+    <script src="js/services/eventos.service.js"></script>
+
+</head>
+<body>
+    <!--UI View-->
+    <div class="container" ui-view></div>
+</body>
+</html>
