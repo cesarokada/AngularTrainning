@@ -34,7 +34,7 @@ app.config(['$stateProvider','$urlRouterProvider',
             })
 
             .state('eventos.editar', {
-                url: '/cadastrar',
+                url: '/editar',
                 controller: 'EventoCadastrarController',
                 templateUrl: 'views/eventos/cadastrar.view.html'
             })

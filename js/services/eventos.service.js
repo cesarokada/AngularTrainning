@@ -50,6 +50,11 @@ app.service('EventoService', ['$q', '$http', function($q, $http) {
         return editEvent;
     };
 
+    events.clear = function () {
+        editEvent = null;
+        return editEvent;
+    };
+
 
     return events;
 }

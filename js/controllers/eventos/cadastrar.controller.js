@@ -1,5 +1,5 @@
-app.controller('EventoCadastrarController', ['$scope', 'EventoService', 'toastr', '$state',
-    function ($scope, EventoService, toastr, $state) {
+app.controller('EventoCadastrarController', ['$scope', 'EventoService', 'toastr', '$state','$rootScope',
+    function ($scope, EventoService, toastr, $state, $rootScope) {
 
         'use strict';
 
@@ -29,5 +29,13 @@ app.controller('EventoCadastrarController', ['$scope', 'EventoService', 'toastr'
                     });
                 });
         };
+
+        $rootScope.$on('$stateChangeSuccess', function(evento, toState, toParams, fromState, fromParams){
+            if(fromState.name === 'eventos.editar'){
+                if(EventoService.getEventEdit() !== null){
+                    EventoService.clear();
+                }
+            }
+        });
 
     }]);
