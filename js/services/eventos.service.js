@@ -17,6 +17,18 @@ app.service('EventoService', ['$q', '$http', function($q, $http) {
         return deffered.promise;
     };
 
+    events.deleteEvento = function(id){
+        var deffered = $q.defer();
+
+        $http.post('http://endpoint.amoremcartas.com.br/delete/', JSON.stringify(id))
+        .success(function(data, config, headers, status) {
+            deffered.resolve(data);
+        }).error(function(data, config, headers, status) {
+                deffered.reject(data);
+            });
+        return deffered.promise;
+    };
+
     return events;
 }
 ]);
