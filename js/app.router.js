@@ -26,4 +26,9 @@ app.config(['$stateProvider','$urlRouterProvider',
                     }
                 }
             })
+            .state('eventos.cadastrar', {
+                url: '/cadastrar',
+                controller: 'EventoCadastrarController',
+                templateUrl: 'views/eventos/cadastrar.view.html'
+            })
     }]);
