@@ -38,4 +38,13 @@ app.config(['$stateProvider','$urlRouterProvider',
                 controller: 'EventoCadastrarController',
                 templateUrl: 'views/eventos/cadastrar.view.html'
             })
-    }]);
+    }
+])
+.run(['$state','$cookies', function($state,$cookies){
+
+    var str = $cookies.get('emailCit');
+
+    if(str == null || str == undefined ){
+        $state.go('login');
+    }
+}]);

@@ -56,6 +56,18 @@ app.service('EventoService', ['$q', '$http', function($q, $http) {
     };
 
 
+    events.editarEvento = function(evento){
+            var deffered = $q.defer();
+
+            $http.post('    http://endpoint.amoremcartas.com.br/update/', JSON.stringify(evento))
+                .success(function(data, config, headers, status) {
+                    deffered.resolve(data);
+                }).error(function(data, config, headers, status) {
+                deffered.reject(data);
+            });
+            return deffered.promise;
+        };
+
     return events;
 }
 ]);

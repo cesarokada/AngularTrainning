@@ -1,10 +1,6 @@
 app.controller('EventoListarController',['eventoList','$scope','$state','EventoService','toastr',
     function(eventoList, $scope, $state, EventoService, toastr) {
 
-        //$scope.listEvents = function(){
-        //    return eventoList.eventos;
-        //};
-
         $scope.listaEventos = eventoList.eventos;
 
         $scope.deleteEvento = function(id){

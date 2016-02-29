@@ -38,4 +38,22 @@ app.controller('EventoCadastrarController', ['$scope', 'EventoService', 'toastr'
             }
         });
 
+
+        $scope.editarEvento = function (evento) {
+            EventoService.cadastraEvento(evento)
+                .then(function (response) {
+                    toastr.success('Evento editado com sucesso!', 'Eventos', {
+                        closeButton: true,
+                        onShown: function () {
+                            $state.go('eventos.listar');
+                        }
+                    });
+                })
+                .catch(function (error) {
+                    toastr.error('Erro ao editar evento', 'Eventos', {
+                        closeButton: true
+                    });
+                });
+        };
+
     }]);
