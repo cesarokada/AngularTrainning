@@ -68,6 +68,18 @@ app.service('EventoService', ['$q', '$http', function($q, $http) {
             return deffered.promise;
         };
 
+    events.validaEmail = function(email){
+        if(email == null || email == undefined){
+            return false;
+        }
+        var str = email.split('@');
+        if(str.pop() == 'ciandt.com') {
+            return true;
+        } else {
+            return false;
+        }
+    };
+
     return events;
 }
 ]);

@@ -38,7 +38,6 @@ app.controller('EventoCadastrarController', ['$scope', 'EventoService', 'toastr'
             }
         });
 
-
         $scope.editarEvento = function (evento) {
             EventoService.cadastraEvento(evento)
                 .then(function (response) {

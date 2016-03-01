@@ -40,11 +40,20 @@ app.config(['$stateProvider','$urlRouterProvider',
             })
     }
 ])
-.run(['$state','$cookies', function($state,$cookies){
+    .run(['$state','$cookies','$rootScope','EventoService', function($state,$cookies,$rootScope,EventoService){
 
-    var str = $cookies.get('emailCit');
-
-    if(str == null || str == undefined ){
-        $state.go('login');
-    }
+    $rootScope.$on('$stateChangeStart',
+        function (evento, toState, toParams, fromState, fromParam) {
+            var email = $cookies.get('emailCit');
+            var flag = EventoService.validaEmail(email);
+            if(fromState.name !== 'login') {
+                if (toState.name !== 'login' && !flag) {
+                    evento.preventDefault();
+                    $state.go('login');
+                }
+            } else if(fromState.name === 'login' && !flag){
+                evento.preventDefault();
+                $state.go('login');
+            }
+        });
 }]);
