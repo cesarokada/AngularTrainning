@@ -1,5 +1,22 @@
-app.config(['$stateProvider','$urlRouterProvider',
-    function($stateProvider, $urlRouterProvider){
+app.config(['$stateProvider','$urlRouterProvider', 'momentPickerProvider',
+    function($stateProvider, $urlRouterProvider, momentPickerProvider){
+
+        momentPickerProvider.options({
+           //Picker properties
+            locale: 'pt-br',
+            format: 'L LT',
+
+            //Extra: views properties
+            leftArrow:      '&larr;',
+            rightArrow:     '&rarr;',
+            monthsFormat:   'MMM',
+            daysFormat:     'D',
+            hoursFormat:    'HH:[00]',
+            minutesFormat:  moment.localeData().longDateFormat('LT').replace(/[aA]/,''),
+            secondFormat:   'ss',
+            minuteStep:     30,
+            secondStep:     1
+        });
 
         $urlRouterProvider.otherwise(function ($injector, $location, $rootScope){
             var $state = $injector.get('$state');

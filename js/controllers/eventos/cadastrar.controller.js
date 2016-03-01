@@ -1,6 +1,5 @@
 app.controller('EventoCadastrarController', ['$scope', 'EventoService', 'toastr', '$state','$rootScope',
     function ($scope, EventoService, toastr, $state, $rootScope) {
-
         'use strict';
 
         var editEventObj = EventoService.getEventEdit();
@@ -12,6 +11,8 @@ app.controller('EventoCadastrarController', ['$scope', 'EventoService', 'toastr'
             $scope.evento = editEventObj;
             $scope.edit = true;
         }
+
+        $scope.minDate = moment().format('DD/MM/YYYY');
 
         $scope.cadastraEvento = function (evento) {
             EventoService.cadastraEvento(evento)
