@@ -13,6 +13,7 @@ app.controller('EventoCadastrarController', ['$scope', 'EventoService', 'toastr'
         }
 
         $scope.minDate = moment().format('DD/MM/YYYY');
+        $scope.minHour = moment().format('hh:mm:ss');
 
         $scope.cadastraEvento = function (evento) {
             EventoService.cadastraEvento(evento)
